@@ -1,0 +1,44 @@
+<div class="product__item {{ currentProduct.badge }}">
+  <div
+    style="background-image: url('{{ currentProduct.imgUrl }}')"
+    class="product__item__pic set-bg"
+    data-setbg="assets/img/product/product-1.jpg"
+  >
+    <span class="label" *ngIf="currentProduct.badge != ''">{{
+      currentProduct.badge
+    }}</span>
+    <ul class="product__hover">
+      <li>
+        <a href="#">
+          <img src="assets/img/icon/heart.png" alt="" />
+          <span>Love</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="assets/img/icon/compare.png" alt="" />
+          <span>Compare</span>
+        </a>
+      </li>
+      <li>
+        <a href="#"><img src="assets/img/icon/search.png" alt="" /></a>
+      </li>
+    </ul>
+  </div>
+  <div class="product__item__text">
+    <h6>{{ currentProduct.title }}</h6>
+    <a href="#" class="add-cart">+ Add To Cart</a>
+    <h5>${{ currentProduct.price }}</h5>
+    <div class="product__color__select">
+      <label for="pc-7">
+        <input type="radio" id="pc-7" />
+      </label>
+      <label class="active black" for="pc-8">
+        <input type="radio" id="pc-8" />
+      </label>
+      <label class="grey" for="pc-9">
+        <input type="radio" id="pc-9" />
+      </label>
+    </div>
+  </div>
+</div>
