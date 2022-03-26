@@ -18,6 +18,11 @@ import { ShopAccordingComponent } from './shop/shop-according/shop-according.com
 import { ShopProductsComponent } from './shop/shop-products/shop-products.component';
 import { ProductOptionComponent } from './shop/product-option/product-option.component';
 import { ProductPaginationComponent } from './shop/product-pagination/product-pagination.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { BodyComponent } from './shopping-cart/body/body.component';
+import { BlogComponent } from './blog/blog.component';
+import { BackgroundImageComponent } from './blog/background-image/background-image.component';
+import { DetailsComponent } from './blog/details/details.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { ProductPaginationComponent } from './shop/product-pagination/product-pa
     ShopProductsComponent,
     ProductOptionComponent,
     ProductPaginationComponent,
+    ShoppingCartComponent,
+    BodyComponent,
+    BlogComponent,
+    BackgroundImageComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
