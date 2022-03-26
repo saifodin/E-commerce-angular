@@ -15,6 +15,11 @@ import { HeaderComponent } from './header/header.component';
 import { ShopComponent } from './shop/shop.component';
 import { BreadcrumbComponent } from './shop/breadcrumb/breadcrumb.component';
 import { ShopSpadComponent } from './shop/shop-spad/shop-spad.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { BodyComponent } from './shopping-cart/body/body.component';
+import { BlogComponent } from './blog/blog.component';
+import { BackgroundImageComponent } from './blog/background-image/background-image.component';
+import { DetailsComponent } from './blog/details/details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { ShopSpadComponent } from './shop/shop-spad/shop-spad.component';
     ShopComponent,
     BreadcrumbComponent,
     ShopSpadComponent,
+    ShoppingCartComponent,
+    BodyComponent,
+    BlogComponent,
+    BackgroundImageComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
