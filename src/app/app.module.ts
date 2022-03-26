@@ -12,6 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 import { InstagramComponent } from './home/instagram/instagram.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { HeaderComponent } from './header/header.component';
+import { ShopComponent } from './shop/shop.component';
+import { BreadcrumbComponent } from './shop/breadcrumb/breadcrumb.component';
+import { ShopSpadComponent } from './shop/shop-spad/shop-spad.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { HeaderComponent } from './header/header.component';
     InstagramComponent,
     CategoriesComponent,
     HeaderComponent,
+    ShopComponent,
+    BreadcrumbComponent,
+    ShopSpadComponent,
   ],
   imports: [
     BrowserModule,
