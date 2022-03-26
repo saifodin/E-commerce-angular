@@ -2,6 +2,23 @@
 
 <app-breadcrumb></app-breadcrumb>
 
-<app-shop-spad></app-shop-spad>
+<section class="shop spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <app-shop-according></app-shop-according>
+      </div>
+      <div class="col-lg-9">
+        <app-product-option></app-product-option>
+        <app-shop-products class="row"></app-shop-products>
+        <div class="row">
+          <div class="col-lg-12">
+            <app-product-pagination></app-product-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-footer></app-footer>

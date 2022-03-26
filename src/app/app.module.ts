@@ -7,14 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { ProductsComponent } from './home/products/products.component';
-import { ProductCartComponent } from './product-cart/product-cart.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { InstagramComponent } from './home/instagram/instagram.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { HeaderComponent } from './header/header.component';
 import { ShopComponent } from './shop/shop.component';
 import { BreadcrumbComponent } from './shop/breadcrumb/breadcrumb.component';
-import { ShopSpadComponent } from './shop/shop-spad/shop-spad.component';
+import { ShopAccordingComponent } from './shop/shop-according/shop-according.component';
+import { ShopProductsComponent } from './shop/shop-products/shop-products.component';
+import { ProductOptionComponent } from './shop/product-option/product-option.component';
+import { ProductPaginationComponent } from './shop/product-pagination/product-pagination.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { ShopSpadComponent } from './shop/shop-spad/shop-spad.component';
     HeroComponent,
     BannerComponent,
     ProductsComponent,
-    ProductCartComponent,
+    ProductCardComponent,
     FooterComponent,
     InstagramComponent,
     CategoriesComponent,
     HeaderComponent,
     ShopComponent,
     BreadcrumbComponent,
-    ShopSpadComponent,
+    ShopAccordingComponent,
+    ShopProductsComponent,
+    ProductOptionComponent,
+    ProductPaginationComponent,
   ],
   imports: [
     BrowserModule,
