@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap');
+$bgColor : #111111;
+$fontCOlor:#FFF;
+$borderColor:#FF0000;
+$borderSize:1px;
+$secondColor:#FF0000;
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #111111;
+    color: $fontCOlor;
+}
+p,h1,h2,h3,h4,h5,h6 
+{
+    color: $secondColor;
+}

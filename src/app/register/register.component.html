@@ -1,0 +1,80 @@
+<div class="w-75 m-auto py-5">
+
+    <div *ngIf='error' class="alert alert-danger">
+        <p>{{error}}</p>
+    </div>
+
+<form [formGroup]='registerForm'  (ngSubmit)="submit(registerForm)" > 
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input formControlName='name' class="form-control" type="text" name="" id="name">
+        <div *ngIf="registerForm.get('name')?.errors!=null&& registerForm.get('name')?.touched" class="alert my-2 alert-dark">
+            <p *ngIf="registerForm.get('name')?.errors?.['required']" >Name is Required </p>
+            <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Min Length 3</p>
+            <p *ngIf="registerForm.get('name')?.errors?.['pattern']">Name Containes numbers</p>
+
+        </div>
+    </div>
+ 
+
+
+
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input formControlName='email' class="form-control" type="text" name="" id="email">
+        <div *ngIf="registerForm.get('email')?.errors!=null&& registerForm.get('email')?.touched" class="alert my-2 alert-dark">
+            <p *ngIf="registerForm.get('email')?.errors?.['required']" >  Email is Required </p>
+            <p *ngIf="registerForm.get('email')?.errors?.['email']">Enter Valid E-mail</p>
+            
+
+        </div>
+    </div>
+ 
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName='password' class="form-control" type="password" name="" id="password">
+        <div *ngIf="registerForm.get('password')?.errors!=null&& registerForm.get('password')?.touched" class="alert my-2 alert-dark">
+            <p *ngIf="registerForm.get('password')?.errors?.['required']" >  Password is Required </p>
+            <p *ngIf="registerForm.get('password')?.errors?.['pattern']">  Wrong Password Format </p>
+          
+          
+        </div>
+    </div>
+
+
+
+  
+
+
+<div class="form-group">
+        <label for="mobileNumber">Mobile</label>
+        <input formControlName='mobileNumber' class="form-control" type="number" name="" id="mobileNumber">
+        <div *ngIf="registerForm.get('mobileNumber')?.errors!=null&& registerForm.get('mobileNumber')?.touched" class="alert my-2 alert-dark">
+            <p *ngIf="registerForm.get('mobileNumber')?.errors?.['required']" >  Mobile is Required </p>
+            <p *ngIf="registerForm.get('mobileNumber')?.errors?.['pattern']">Enter Valid Phone</p>
+            
+
+        </div>
+    </div>
+ 
+  
+
+
+
+    <div class="form-group">
+        <label for="adress">Adress</label>
+        <input formControlName='mobileNumber' class="form-control" type="text" name="" id="adress">
+        <div *ngIf="registerForm.get('adress')?.errors!=null&& registerForm.get('adress')?.touched" class="alert my-2 alert-dark">
+          
+
+        </div>
+    </div>
+    
+<div class="d-flex justify-content-center">
+    <button [disabled]='registerForm.invalid'class="btn btn-info text-center " type="submit">Register</button>
+  </div>
+
+</form>
+
+</div>

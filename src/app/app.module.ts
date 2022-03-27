@@ -23,6 +23,10 @@ import { BodyComponent } from './shopping-cart/body/body.component';
 import { BlogComponent } from './blog/blog.component';
 import { BackgroundImageComponent } from './blog/background-image/background-image.component';
 import { DetailsComponent } from './blog/details/details.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -49,11 +53,13 @@ import { DetailsComponent } from './blog/details/details.component';
     BlogComponent,
     BackgroundImageComponent,
     DetailsComponent,
+    RegisterComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
