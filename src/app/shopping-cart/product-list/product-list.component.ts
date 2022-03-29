@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CartTotal } from './cartTotal.model';
 import { ProductCart } from './productCart.model';
 
 @Component({
-  selector: '[app-product-list]',
+  selector: '.app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
@@ -37,15 +38,34 @@ export class ProductListComponent implements OnInit {
       3
     ),
   ];
-  // cartTotal = {
-  //   items:this.products.map(e => e.quantity).reduce((prev, next) => prev + next),
-  //   total:this.products.map(e => e.totalPrice).reduce((prev, next) => prev + next),
-  // }
-  // @Output() newItemEvent = new EventEmitter<string>();
-  // addNewItem(value: string) {
-  //   this.newItemEvent.emit(value);
-  // }
+
+  cartTotal: CartTotal = new CartTotal(
+    this.products.map((e) => e.quantity).reduce((prev, next) => prev + next),
+    Number(
+      this.products
+        .map((e) => e.totalPrice)
+        .reduce((prev, next) => prev + next)
+        .toFixed(2)
+    )
+  );
+
+  @Output() newItemEvent = new EventEmitter<CartTotal>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngDoCheck() {
+    this.cartTotal.items = this.products
+      .map((e) => e.quantity)
+      .reduce((prev, next) => prev + next);
+    this.cartTotal.total = Number(
+      this.products
+        .map((e) => e.totalPrice)
+        .reduce((prev, next) => prev + next)
+        .toFixed(2)
+    );
+    this.newItemEvent.emit(this.cartTotal);
+    console.log(this.cartTotal);
+  }
 }

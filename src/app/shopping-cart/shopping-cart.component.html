@@ -14,7 +14,10 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody app-product-list></tbody>
+            <tbody
+              class="app-product-list"
+              (newItemEvent)="putTheValue($event)"
+            ></tbody>
           </table>
         </div>
         <div class="row">
@@ -31,7 +34,7 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <app-cart-total></app-cart-total>
+        <app-cart-total [cartTotal]="cartTotal"></app-cart-total>
       </div>
     </div>
   </div>
