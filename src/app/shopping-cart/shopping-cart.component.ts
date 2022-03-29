@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrls: []
+  styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
 
@@ -11,5 +11,4 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

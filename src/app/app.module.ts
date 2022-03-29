@@ -19,7 +19,6 @@ import { ShopProductsComponent } from './shop/shop-products/shop-products.compon
 import { ProductOptionComponent } from './shop/product-option/product-option.component';
 import { ProductPaginationComponent } from './shop/product-pagination/product-pagination.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { BodyComponent } from './shopping-cart/body/body.component';
 import { BlogComponent } from './blog/blog.component';
 import { BackgroundImageComponent } from './blog/background-image/background-image.component';
 import { DetailsComponent } from './blog/details/details.component';
@@ -27,6 +26,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductListComponent } from './shopping-cart/product-list/product-list.component';
+import { ProductComponent } from './shopping-cart/product-list/product/product.component';
+import { CartTotalComponent } from './shopping-cart/cart-total/cart-total.component';
 
 
 @NgModule({
@@ -49,13 +51,14 @@ import { HttpClientModule } from '@angular/common/http';
     ProductOptionComponent,
     ProductPaginationComponent,
     ShoppingCartComponent,
-    BodyComponent,
     BlogComponent,
     BackgroundImageComponent,
     DetailsComponent,
     RegisterComponent,
     LoginComponent,
-
+    ProductListComponent,
+    ProductComponent,
+    CartTotalComponent,
   ],
   imports: [
     BrowserModule,
