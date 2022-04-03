@@ -15,19 +15,13 @@ export class LoginComponent implements OnInit {
  
   submitLoginForm(loginForm:FormGroup)
   {
-    
+   console.log('test');
     this._AuthService.login(loginForm.value).subscribe((response)=>{
-      if(response.message=='success')
-      {
+      console.log('test'); 
         localStorage.setItem('userToken',response.token)
-
         this._AuthService.saveCurrentUser();
-       this._Router.navigate(['/home']);
-      }
-      else
-      {
-       this.error = response.errors.email.message; 
-      }
+        this._Router.navigate(['']);
+     
     })
 
   }

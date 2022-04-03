@@ -1,25 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jwtDecode from 'jwt-decode';
-import { Observable } from 'rxjs';
+import { Observable,BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  currentUser = null;
+  currentUser = new BehaviorSubject(null);
 
   saveCurrentUser()
   {
     let token:any = localStorage.getItem('userToken');
-    this.currentUser=jwtDecode(token);
+    this.currentUser.next(jwtDecode(token));
     console.log(this.currentUser);
   }
-  constructor(private _HttpClient:HttpClient)
+  constructor(private _HttpClient:HttpClient,private _Router:Router)
   {
-
+    if(localStorage.getItem('userToken')!=null)
+    {
+      this.saveCurrentUser();
+    }
   }
+  
   regestier(formData:any):Observable<any>
   {
    return this._HttpClient.post('https://eshop-iti.herokuapp.com/api/v1/users/register',formData)
@@ -27,7 +32,14 @@ export class AuthService {
   }
   login(formData:any):Observable<any>
   {
-   return this._HttpClient.post('https://api/login',formData)
+   return this._HttpClient.post('https://eshop-iti.herokuapp.com/api/v1/users/login',formData)
+
+  }
+  logout()
+  {
+    this.currentUser.next(null);
+    localStorage.removeItem('userToken');
+    this._Router.navigate(['/login']);
 
   }
 }

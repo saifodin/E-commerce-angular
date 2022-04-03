@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductListComponent } from './shopping-cart/product-list/product-list.component';
 import { ProductComponent } from './shopping-cart/product-list/product/product.component';
 import { CartTotalComponent } from './shopping-cart/cart-total/cart-total.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { CartTotalComponent } from './shopping-cart/cart-total/cart-total.compon
     ProductListComponent,
     ProductComponent,
     CartTotalComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

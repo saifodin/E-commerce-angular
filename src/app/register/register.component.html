@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label for="email">E-mail</label>
-        <input formControlName='email' class="form-control" type="text" name="" id="email">
+        <input formControlName='email' class="form-control" type="email" name="" id="email">
         <div *ngIf="registerForm.get('email')?.errors!=null&& registerForm.get('email')?.touched" class="alert my-2 alert-dark">
             <p *ngIf="registerForm.get('email')?.errors?.['required']" >  Email is Required </p>
             <p *ngIf="registerForm.get('email')?.errors?.['email']">Enter Valid E-mail</p>
