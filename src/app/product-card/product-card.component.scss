@@ -189,7 +189,7 @@
       margin-bottom: 0;
       margin-right: 5px;
       position: relative;
-      cursor: pointer;
+      //cursor: pointer;
       
       &.black {
         background: #404a47;
@@ -199,12 +199,12 @@
         background: #d5a667;
       }
 
-      &.active {
+      // &.active {
 
-        &:after {
-          opacity: 1;
-        }
-      }
+      //   &:after {
+      //     opacity: 1;
+      //   }
+      // }
 
       &:after {
         position: absolute;
