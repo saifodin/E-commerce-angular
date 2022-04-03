@@ -22,7 +22,7 @@ export class AuthService {
   }
   regestier(formData:any):Observable<any>
   {
-   return this._HttpClient.post('https://api/signup',formData)
+   return this._HttpClient.post('https://eshop-iti.herokuapp.com/api/v1/users/register',formData)
 
   }
   login(formData:any):Observable<any>

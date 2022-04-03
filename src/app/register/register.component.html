@@ -11,7 +11,7 @@
         <div *ngIf="registerForm.get('name')?.errors!=null&& registerForm.get('name')?.touched" class="alert my-2 alert-dark">
             <p *ngIf="registerForm.get('name')?.errors?.['required']" >Name is Required </p>
             <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Min Length 3</p>
-            <p *ngIf="registerForm.get('name')?.errors?.['pattern']">Name Containes numbers</p>
+         <!---->   <p *ngIf="registerForm.get('name')?.errors?.['pattern']">Name Containes numbers</p>
 
         </div>
     </div>
@@ -36,7 +36,7 @@
         <input formControlName='password' class="form-control" type="password" name="" id="password">
         <div *ngIf="registerForm.get('password')?.errors!=null&& registerForm.get('password')?.touched" class="alert my-2 alert-dark">
             <p *ngIf="registerForm.get('password')?.errors?.['required']" >  Password is Required </p>
-            <p *ngIf="registerForm.get('password')?.errors?.['pattern']">  Wrong Password Format </p>
+         
           
           
         </div>
@@ -48,11 +48,11 @@
 
 
 <div class="form-group">
-        <label for="mobileNumber">Mobile</label>
-        <input formControlName='mobileNumber' class="form-control" type="number" name="" id="mobileNumber">
-        <div *ngIf="registerForm.get('mobileNumber')?.errors!=null&& registerForm.get('mobileNumber')?.touched" class="alert my-2 alert-dark">
-            <p *ngIf="registerForm.get('mobileNumber')?.errors?.['required']" >  Mobile is Required </p>
-            <p *ngIf="registerForm.get('mobileNumber')?.errors?.['pattern']">Enter Valid Phone</p>
+        <label for="phone">Mobile</label>
+        <input formControlName='phone' class="form-control" type="text" name="" id="phone">
+        <div *ngIf="registerForm.get('phone')?.errors!=null&& registerForm.get('phone')?.touched" class="alert my-2 alert-dark">
+            <p *ngIf="registerForm.get('phone')?.errors?.['required']" >  Mobile is Required </p>
+            
             
 
         </div>
@@ -64,7 +64,7 @@
 
     <div class="form-group">
         <label for="adress">Adress</label>
-        <input formControlName='mobileNumber' class="form-control" type="text" name="" id="adress">
+        <input formControlName='adress' class="form-control" type="text" name="" id="adress">
         <div *ngIf="registerForm.get('adress')?.errors!=null&& registerForm.get('adress')?.touched" class="alert my-2 alert-dark">
           
 
