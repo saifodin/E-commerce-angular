@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../home/products/product.model';
+import { ProductDB } from '../product.model';
 
 @Component({
   selector: 'app-product-cart',
@@ -7,9 +8,9 @@ import { Product } from '../home/products/product.model';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() currentProduct: Product = new Product('', '', 0, '', '');
-  // @Input() currentProductShop: ProductShop = new ProductShop('', '', 0, '');
+  @Input() currentProduct: ProductDB;
 
+  // @Input() currentProductShop: ProductShop = new ProductShop('', '', 0, '');
 
   constructor() {}
 
