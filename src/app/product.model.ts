@@ -1,15 +1,3 @@
-// export class Product {
-//   public name: string;
-//   public description: string;
-//   public imgPath: string;
-
-//   constructor(_name: string, _description: string, _imgPath: string) {
-//     this.name = _name;
-//     this.description = _description;
-//     this.imgPath = _imgPath;
-//   }
-// }
-
 interface Color {
   colorName: string;
   colorHex: string;
