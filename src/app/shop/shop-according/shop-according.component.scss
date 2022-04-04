@@ -107,6 +107,9 @@
 
   ul {
     height: auto;
+    li{
+      cursor: pointer;
+    }
   }
 }
 
@@ -150,42 +153,6 @@
     display: inline-block;
     margin-bottom: 10px;
     cursor: pointer;
-
-    &.c-1 {
-      background: #0b090c;
-    }
-
-    &.c-2 {
-      background: #20315f;
-    }
-
-    &.c-3 {
-      background: #f1af4d;
-    }
-
-    &.c-4 {
-      background: #636068;
-    }
-
-    &.c-5 {
-      background: #57594d;
-    }
-
-    &.c-6 {
-      background: #e8bac4;
-    }
-
-    &.c-7 {
-      background: #d6c1d7;
-    }
-
-    &.c-8 {
-      background: #ed1c24;
-    }
-
-    &.c-9 {
-      background: #ffffff;
-    }
 
     &:after {
       position: absolute;
