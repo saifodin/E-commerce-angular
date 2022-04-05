@@ -14,7 +14,9 @@
             <div class="shop__sidebar__categories">
               <ul class="nice-scroll">
                 <li *ngFor="let category of categories">
-                  <a href="/shop/{{category.name}}" [id]="category._id">{{ category.name }}</a>
+                  <a href="/shop/{{ category.name }}" [id]="category._id">{{
+                    category.name
+                  }}</a>
                 </li>
               </ul>
             </div>
@@ -34,13 +36,33 @@
         >
           <div class="card-body">
             <div class="shop__sidebar__price">
-              <ul>
-                <li><a href="#">$0.00 - $50.00</a></li>
-                <li><a href="#">$50.00 - $100.00</a></li>
-                <li><a href="#">$100.00 - $150.00</a></li>
-                <li><a href="#">$150.00 - $200.00</a></li>
-                <li><a href="#">$200.00 - $250.00</a></li>
-                <li><a href="#">250.00+</a></li>
+              <ul (click)="filterByPriceParent($event)">
+                <li>
+                  <a data-minSalary="0" data-maxSalary="50">$0.00 - $50.00</a>
+                </li>
+                <li>
+                  <a data-minSalary="50" data-maxSalary="100">
+                    $50.00 - $100.00
+                  </a>
+                </li>
+                <li>
+                  <a data-minSalary="100" data-maxSalary="150">
+                    $100.00 - $150.00
+                  </a>
+                </li>
+                <li>
+                  <a data-minSalary="150" data-maxSalary="200">
+                    $150.00 - $200.00
+                  </a>
+                </li>
+                <li>
+                  <a data-minSalary="2000" data-maxSalary="250">
+                    $200.00 - $250.00
+                  </a>
+                </li>
+                <li>
+                  <a data-minSalary="250" data-maxSalary="100000"> 250.00+ </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -56,38 +78,41 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <div class="shop__sidebar__size">
-              <label for="xs"
-                >xs
-                <input type="radio" id="xs" />
+            <div
+              class="shop__sidebar__size"
+              (click)="filterBySizeChild($event)"
+            >
+              <label for="XS">
+                xs
+                <input type="radio" name="size" id="XS" />
               </label>
-              <label for="sm"
-                >s
-                <input type="radio" id="sm" />
+              <label for="S">
+                s
+                <input type="radio" name="size" id="S" />
               </label>
-              <label for="md"
-                >m
-                <input type="radio" id="md" />
+              <label for="M">
+                m
+                <input type="radio" name="size" id="M" />
               </label>
-              <label for="xl"
-                >xl
-                <input type="radio" id="xl" />
+              <label for="L">
+                L
+                <input type="radio" name="size" id="L" />
               </label>
-              <label for="2xl"
-                >2xl
-                <input type="radio" id="2xl" />
+              <label for="XL">
+                xl
+                <input type="radio" name="size" id="XL" />
               </label>
-              <label for="xxl"
-                >xxl
-                <input type="radio" id="xxl" />
+              <label for="2XL">
+                2xl
+                <input type="radio" name="size" id="2XL" />
               </label>
-              <label for="3xl"
-                >3xl
-                <input type="radio" id="3xl" />
+              <label for="3XL">
+                3xl
+                <input type="radio" name="size" id="3XL" />
               </label>
-              <label for="4xl"
-                >4xl
-                <input type="radio" id="4xl" />
+              <label for="4XL">
+                4xl
+                <input type="radio" name="size" id="4XL" />
               </label>
             </div>
           </div>
@@ -103,32 +128,38 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <div class="shop__sidebar__color">
-              <label class="c-1" for="sp-1">
-                <input type="radio" id="sp-1" />
+            <div
+              class="shop__sidebar__color"
+              (click)="filterByColorChild($event)"
+            >
+              <label class="c-1" for="black" style="background-color: #000">
+                <input type="radio" id="black" />
               </label>
-              <label class="c-2" for="sp-2">
+              <label class="c-2" for="grey" style="background-color: #ddd">
                 <input type="radio" id="sp-2" />
               </label>
-              <label class="c-3" for="sp-3">
+              <label class="c-3" for="blue" style="background-color: #20315f">
                 <input type="radio" id="sp-3" />
               </label>
-              <label class="c-4" for="sp-4">
+              <label class="c-4" for="yellow" style="background-color: #f1af4d">
                 <input type="radio" id="sp-4" />
               </label>
-              <label class="c-5" for="sp-5">
+              <label class="c-4" for="white" style="background-color: #fff">
+                <input type="radio" id="sp-4" />
+              </label>
+              <label class="c-5" for="red" style="background-color: #ed1c24">
                 <input type="radio" id="sp-5" />
               </label>
-              <label class="c-6" for="sp-6">
+              <label class="c-6" for="pink" style="background-color: pink">
                 <input type="radio" id="sp-6" />
               </label>
-              <label class="c-7" for="sp-7">
+              <label class="c-7" for="green" style="background-color: green">
                 <input type="radio" id="sp-7" />
               </label>
-              <label class="c-8" for="sp-8">
+              <label class="c-8" for="orange" style="background-color: orange">
                 <input type="radio" id="sp-8" />
               </label>
-              <label class="c-9" for="sp-9">
+              <label class="c-9" for="brown" style="background-color: brown">
                 <input type="radio" id="sp-9" />
               </label>
             </div>
