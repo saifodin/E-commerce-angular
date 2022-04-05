@@ -17,13 +17,21 @@ export class RegisterComponent implements OnInit {
 
   submit(registerForm:FormGroup)
   {
-   this._AuthService.regestier(registerForm.value).subscribe((response)=>{
-    
+   this._AuthService.regestier(registerForm.value).subscribe((response : any)=>{
+
+  
+    localStorage.setItem('userInfo',JSON.stringify(response));
       this._Router.navigate(['/login']);
      
     
+   },error=>{
+     console.warn()
    })
    
+  }
+  goToLogIn()
+  {
+    this._Router.navigate(['/login']);
   }
 
   registerForm= new FormGroup(

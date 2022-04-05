@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,7 +9,9 @@ import { AuthService } from '../auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+UserInfo : any
   constructor(private _AuthService:AuthService)  {
+    this.UserInfo=JSON.parse(localStorage.getItem('userInfo')!)
   _AuthService.currentUser.subscribe(()=>{
 
     if(_AuthService.currentUser.getValue()!=null)
