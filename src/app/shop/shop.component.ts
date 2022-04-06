@@ -12,7 +12,8 @@ export class ShopComponent implements OnInit {
   allLoadedProducts: ProductDB[] = [];
   loadedProducts: ProductDB[] = [];
   category: string;
-
+  userInfo = JSON.parse(localStorage.getItem('userInfo') || '');
+  userToken = JSON.parse(localStorage.getItem('userInfo') || '');
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class ShopComponent implements OnInit {
       this.fetchProducts(this.category);
     }
     this.fetchProducts('');
+    this.getCartProducts();
   }
 
   ngOnChanges(): void {}
@@ -43,6 +45,17 @@ export class ShopComponent implements OnInit {
           this.allLoadedProducts = products;
         });
     }
+  }
+
+  private getCartProducts() {
+    this.http
+      .get<any[]>(
+        `https://eshop-iti.herokuapp.com/api/v1/cart/${this.userInfo._id}`
+      )
+      .subscribe((productsInCart) => {
+        console.log('productsInCart:');
+        console.log(productsInCart);
+      });
   }
 
   resetProducts() {

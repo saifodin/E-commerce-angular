@@ -1,15 +1,46 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductDB } from '../product.model';
 
 @Component({
   selector: 'app-shop-deatils',
   templateUrl: './shop-deatils.component.html',
-  styleUrls: ['./shop-deatils.component.scss']
+  styleUrls: ['./shop-deatils.component.scss'],
 })
 export class ShopDeatilsComponent implements OnInit {
+  productId: string;
+  currentProduct: ProductDB;
+  quantity: number = 1;
 
-  constructor() { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.productId = this.route.snapshot.params['productId'];
+    if (this.productId) {
+      this.fetchProductDetails(this.productId);
+    }
   }
 
+  increaseQuantity() {
+    this.quantity += 1;
+  }
+
+  decreaseQuantity() {
+    if (this.quantity > 1) {
+      this.quantity -= 1;
+    }
+  }
+
+  private fetchProductDetails(productId: string) {
+    this.http
+      .get<ProductDB>(
+        `https://eshop-iti.herokuapp.com/api/v1/products/${productId}`
+      )
+      .subscribe((productDetails) => {
+        console.log('productDetails');
+        console.log(productDetails);
+        this.currentProduct = productDetails;
+      });
+  }
 }

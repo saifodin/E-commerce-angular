@@ -4,14 +4,18 @@ import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ShopDeatilsComponent } from './shop-deatils/shop-deatils.component';
 import { ShopComponent } from './shop/shop.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
-  { path: '' ,component: HomeComponent },
-  { path: 'register'  , component: RegisterComponent },
-  { path: 'login',  component: LoginComponent },
-  { path: 'shop' , component: ShopComponent },
-  { path: 'shop/:category' , component: ShopComponent },
+  { path: '', component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: 'shop/:category', component: ShopComponent },
+  { path: 'shop/details/:productId', component: ShopDeatilsComponent },
+  { path: 'cart', component: ShoppingCartComponent },
 ];
 
 @NgModule({
