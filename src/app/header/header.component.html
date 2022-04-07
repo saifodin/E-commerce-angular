@@ -37,19 +37,16 @@
         <div class="col-lg-6 col-md-7">
           <div class="header__top__left">
             <p>Free shipping, 30-day return or refund guarantee.</p>
-            
           </div>
         </div>
         <div class="col-lg-6 col-md-5">
           <div class="header__top__right">
             <div class="header__top__links">
-              <a *ngIf='!isLogin' routerLink="register">Register</a>
-              <a *ngIf='!isLogin' routerLink="login">Sign in</a>
-              <a>Welcome {{UserInfo.name}}</a>
-              <a *ngIf='isLogin' routerLink="" (click)="isLogOut()" >Log Out</a>
-              
+              <a *ngIf="!isLogin" routerLink="register">Register</a>
+              <a *ngIf="!isLogin" routerLink="login">Sign in</a>
+              <a>Welcome {{ UserInfo.name }}</a>
+              <a *ngIf="isLogin" routerLink="" (click)="isLogOut()">Log Out</a>
             </div>
-            
           </div>
         </div>
       </div>
@@ -59,16 +56,15 @@
     <div class="row">
       <div class="col-lg-3 col-md-3">
         <div class="header__logo">
-          <a href="./index.html"
-            ><img src="assets/img/logo.png" alt="image"
-          /></a>
+          <a href=""><img src="assets/img/logo.png" alt="image" /></a>
         </div>
       </div>
       <div class="col-lg-6 col-md-6">
         <nav class="header__menu mobile-menu">
           <ul>
-            <li class="active"><a  href="">Home</a></li>
-            <li><a  href="/shop">Shop</a></li>
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a  href="/checkout">Check Out</a></li>            
             <!-- <li>
               <a  href="#">Pages</a>
               <ul class="dropdown">
@@ -79,17 +75,17 @@
                 <li><a  href="./blog-details.html">Blog Details</a></li>
               </ul>
             </li> -->
-            <li><a  href="./blog.html">Blog</a></li>
-            <li><a  href="./contact.html">Contacts</a></li>
+            <!-- <li><a href="./blog.html">Blog</a></li> -->
+            <!-- <li><a href="./contact.html">Contacts</a></li> -->
           </ul>
         </nav>
       </div>
       <div class="col-lg-3 col-md-3">
         <div class="header__nav__option">
-          <a href="#" class="search-switch"
+          <!-- <a href="#" class="search-switch"
             ><img src="assets/img/icon/search.png" alt=""
-          /></a>
-          <a href="#"><img src="assets/img/icon/heart.png" alt="" /></a>
+          /></a> -->
+          <a href="favorite"><img src="assets/img/icon/heart.png" alt="" /></a>
           <a href="cart"
             ><img src="assets/img/icon/cart.png" alt="" /> <span>0</span></a
           >

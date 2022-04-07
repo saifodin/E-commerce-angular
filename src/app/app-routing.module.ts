@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'shop/:category', component: ShopComponent },
   { path: 'shop/details/:productId', component: ShopDeatilsComponent },
   { path: 'cart', component: ShoppingCartComponent },
+  { path: 'favorite', component: FavoriteListComponent },
 ];
 
 @NgModule({

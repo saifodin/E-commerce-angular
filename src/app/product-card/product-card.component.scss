@@ -131,6 +131,9 @@
           display: inline-block;
         }
       }
+      .removeFavorite a {
+        cursor: pointer;
+      } 
     }
 }
 
@@ -225,4 +228,5 @@
     }
   }
 }
+
 @import "../../css/responsive";

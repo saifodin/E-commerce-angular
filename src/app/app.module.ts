@@ -31,6 +31,7 @@ import { ProductListComponent } from './shopping-cart/product-list/product-list.
 import { ProductComponent } from './shopping-cart/product-list/product/product.component';
 import { CartTotalComponent } from './shopping-cart/cart-total/cart-total.component';
 import { LogoutComponent } from './logout/logout.component';
+import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { LogoutComponent } from './logout/logout.component';
     ProductComponent,
     CartTotalComponent,
     LogoutComponent,
+    FavoriteListComponent,
   ],
   imports: [
     BrowserModule,

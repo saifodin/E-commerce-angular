@@ -9,10 +9,16 @@ import { ProductDB } from '../product.model';
 })
 export class ProductCardComponent implements OnInit {
   @Input() currentProduct: ProductDB;
-
-  // @Input() currentProductShop: ProductShop = new ProductShop('', '', 0, '');
+  @Input() pageName: string;
+  @Input() allProducts: ProductDB[];
 
   constructor() {}
+
+  removeFromCart() {
+    let index: number = this.allProducts.indexOf(this.currentProduct);
+    this.allProducts.splice(index, 1);
+    console.log(this.allProducts);
+  }
 
   ngOnInit(): void {}
 }

@@ -5,20 +5,29 @@
     data-setbg="assets/img/product/product-1.jpg"
   >
     <ul class="product__hover">
-      <li>
-        <a href="#">
-          <img src="assets/img/icon/heart.png" alt="" />
-          <span>Love</span>
+      <li class="heart" *ngIf="pageName === 'favorite'" class="removeFavorite">
+        <a (click)="removeFromCart()">
+          <img src="assets/img/icon/heartRed.png" alt="" />
+          <span>Remove</span>
         </a>
       </li>
-      <li>
+      <li class="heart" *ngIf="pageName !== 'favorite'">
+        <a href="#">
+          <img src="assets/img/icon/heart.png" alt="" />
+          <span>Favorite</span>
+        </a>
+      </li>
+      <!-- <li>
         <a href="#">
           <img src="assets/img/icon/compare.png" alt="" />
           <span>Compare</span>
         </a>
-      </li>
+      </li> -->
       <li>
-        <a href="shop/details/{{currentProduct._id}}"><img src="assets/img/icon/search.png" alt="" /></a>
+        <a href="shop/details/{{ currentProduct._id }}"
+          ><img src="assets/img/icon/search.png" alt="" />
+          <span>Details</span>
+        </a>
       </li>
     </ul>
   </div>

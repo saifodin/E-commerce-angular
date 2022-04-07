@@ -66,6 +66,6 @@ export class ProductListComponent implements OnInit {
         .toFixed(2)
     );
     this.newItemEvent.emit(this.cartTotal);
-    console.log(this.cartTotal);
+    // console.log(this.cartTotal);
   }
 }
