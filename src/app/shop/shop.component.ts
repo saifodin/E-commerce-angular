@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductDB } from '../product.model';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -13,7 +14,8 @@ export class ShopComponent implements OnInit {
   loadedProducts: ProductDB[] = [];
   category: string;
   userInfo = JSON.parse(localStorage.getItem('userInfo') || '');
-  userToken = JSON.parse(localStorage.getItem('userInfo') || '');
+  idsInFavoriteList: string[];
+
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class ShopComponent implements OnInit {
       this.fetchProducts(this.category);
     }
     this.fetchProducts('');
-    this.getCartProducts();
+    this.getFavoritesIdProduct();
   }
 
   ngOnChanges(): void {}
@@ -47,14 +49,23 @@ export class ShopComponent implements OnInit {
     }
   }
 
-  private getCartProducts() {
+  getFavoritesIdProduct() {
     this.http
-      .get<any[]>(
-        `https://eshop-iti.herokuapp.com/api/v1/cart/${this.userInfo._id}`
+      .get<{ product: ProductDB; dataListed: string }[]>(
+        'https://eshop-iti.herokuapp.com/api/v1/favorite'
       )
-      .subscribe((productsInCart) => {
-        console.log('productsInCart:');
-        console.log(productsInCart);
+      .pipe(
+        map((responseData) => {
+          const myIdsInFavoriteList: string[] = [];
+          for (const ele of responseData) {
+            myIdsInFavoriteList.push(ele.product._id);
+          }
+          return myIdsInFavoriteList;
+        })
+      )
+      .subscribe((myIdsInFavoriteList) => {
+        this.idsInFavoriteList = myIdsInFavoriteList;
+        console.log(this.idsInFavoriteList);
       });
   }
 
