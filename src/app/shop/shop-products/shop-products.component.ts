@@ -10,6 +10,8 @@ import { ProductDB } from 'src/app/product.model';
 export class ShopProductsComponent implements OnInit {
   
   @Input() loadedProducts: ProductDB[] = [];
+  @Input() idsInFavoriteList: string[] = [];
+  myPageName: string = 'shop';
 
   constructor() {}
 

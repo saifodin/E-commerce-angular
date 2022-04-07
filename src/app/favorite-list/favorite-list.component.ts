@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { ProductDB } from '../product.model';
 
 @Component({
@@ -10,15 +11,27 @@ import { ProductDB } from '../product.model';
 export class FavoriteListComponent implements OnInit {
   products: ProductDB[] = [];
   myPageName: string = 'favorite';
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getFavoriteProduct();
   }
-
+  
   getFavoriteProduct() {
     this.http
-      .get<ProductDB[]>('https://eshop-iti.herokuapp.com/api/v1/products')
+      .get<{ product: ProductDB; dataListed: string }[]>(
+        'https://eshop-iti.herokuapp.com/api/v1/favorite'
+      )
+      .pipe(
+        map((responseData) => {
+          const productsArray: ProductDB[] = [];
+          for (const ele of responseData) {
+            productsArray.push({ ...ele.product });
+          }
+          return productsArray;
+        })
+      )
       .subscribe((products) => {
         this.products = products;
       });
