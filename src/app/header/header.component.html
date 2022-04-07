@@ -44,7 +44,7 @@
             <div class="header__top__links">
               <a *ngIf="!isLogin" routerLink="register">Register</a>
               <a *ngIf="!isLogin" routerLink="login">Sign in</a>
-              <a>Welcome {{ userData.name }}</a>
+              <a>Welcome {{ userData?.name }}</a>
               <a *ngIf="isLogin" routerLink="" (click)="isLogOut()">Log Out</a>
             </div>
           </div>
