@@ -34,6 +34,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { TokenInterceptor } from './TokenInterceptor';
 import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
+import { UserdeatilsComponent } from './userdeatils/userdeatils.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
     LogoutComponent,
     FavoriteListComponent,
     CheckoutComponent,
+    UserdeatilsComponent,
   ],
   imports: [
     BrowserModule,

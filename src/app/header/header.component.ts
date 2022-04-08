@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   userData : any;
 
-  constructor(private _AuthService: AuthService, private http: HttpClient) {
+  constructor(private _AuthService: AuthService, private http: HttpClient,_Router:Router) {
    
     _AuthService.currentUser.subscribe(() => {
       if (_AuthService.currentUser.getValue() != null) {
@@ -25,6 +26,10 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+ goToUserDeatils()
+ {
+   this._AuthService.userDeatils();
+ }
 
   isLogin: boolean = false;
 

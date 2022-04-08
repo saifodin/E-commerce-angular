@@ -43,4 +43,8 @@ export class AuthService {
     this._Router.navigate(['']);
 
   }
+  userDeatils()
+  {
+    this._Router.navigate(['/userdeatils']);
+  }
 }
