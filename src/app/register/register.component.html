@@ -17,7 +17,7 @@
   
                   <div class="form-outline mb-4">
                     <label for="name" class="form-label" for="form3Example1cg">Your Name</label>
-                    <input formControlName='name' type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                    <input  formControlName='name' type="text" id="form3Example1cg" class="form-control form-control-lg" />
                     <div *ngIf="registerForm.get('name')?.errors!=null&& registerForm.get('name')?.touched" class="alert my-2 alert-info">
                         <p *ngIf="registerForm.get('name')?.errors?.['required']" >Name is Required </p>
                         <p *ngIf="registerForm.get('name')?.errors?.['minlength']">Min Length 3</p>
@@ -42,10 +42,11 @@
   
                   <div class="form-outline mb-4">
                     <label  for="password" class="form-label" for="form3Example4cg">Password</label>
-                    <input formControlName='password' type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                    <input  formControlName='password' type="password" id="form3Example4cg" class="form-control form-control-lg" />
                     <div *ngIf="registerForm.get('password')?.errors!=null&& registerForm.get('password')?.touched" class="alert my-2 alert-info">
                         <p *ngIf="registerForm.get('password')?.errors?.['required']" >  Password is Required </p>
-                        <p *ngIf="registerForm.get('password')?.errors?.['minlength']" >  minlength is 8</p>
+                        <p *ngIf="registerForm.get('password')?.errors?.['minlength']" >  Min length is 8</p>
+                        <p *ngIf="registerForm.get('password')?.errors?.['pattern']" >  Wrong Pattern</p>
                      
                       
                       
