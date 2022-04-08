@@ -12,4 +12,10 @@ export class CartTotalComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  moveDataToCheckout(){
+    
+  }
+
+  
 }

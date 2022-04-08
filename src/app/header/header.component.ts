@@ -8,6 +8,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  cartTotal: { cartCount: number; totalPrice: number } = {
+    cartCount: 0,
+    totalPrice: 0.0,
+  };
 
   userData : any;
 
@@ -21,23 +25,49 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+
   isLogin: boolean = false;
+
+
   isLogOut() {
     this._AuthService.logout();
+  }
+
+  ngOnInit(): void {
+    this.getCartTotal();
+    this.getUserInfo();
+
+  }
+
+  ngDoCheck() {
+    // this.getCartTotal();
+  }
+
+  ngAfterViewChecked() {
+    // this.getCartTotal();
+  }
+  ngAfterContentChecked() {
+    // this.getCartTotal();
+  }
+
+  private getCartTotal() {
+    this.http
+      .get<{ cartCount: number; totalPrice: number }>(
+        `https://eshop-iti.herokuapp.com/api/v1/cart/get/count`
+      )
+      .subscribe((response) => {
+        this.cartTotal = response;
+      });
   }
 
   private getUserInfo(){
     this.http
       .get<any[]>(`https://eshop-iti.herokuapp.com/api/v1/users/get/me`)
       .subscribe((response:any) => {
-        console.log(response);
+        // console.log(response);
         this.userData = response
-        console.log(this.userData.name)
+        // console.log(this.userData.name)
       });
   }
 
-  ngOnInit(): void {
-
-    this.getUserInfo();
-  }
 }

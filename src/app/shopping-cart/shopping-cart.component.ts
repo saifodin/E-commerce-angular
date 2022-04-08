@@ -16,6 +16,5 @@ export class ShoppingCartComponent implements OnInit {
   putTheValue(newItem: CartTotal) {
     this.cartTotal.items = newItem.items;
     this.cartTotal.total = newItem.total;
-    console.log(this.cartTotal);
   }
 }

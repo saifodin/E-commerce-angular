@@ -33,6 +33,7 @@ import { CartTotalComponent } from './shopping-cart/cart-total/cart-total.compon
 import { LogoutComponent } from './logout/logout.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { TokenInterceptor } from './TokenInterceptor';
+import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { TokenInterceptor } from './TokenInterceptor';
     CartTotalComponent,
     LogoutComponent,
     FavoriteListComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

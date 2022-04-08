@@ -23,7 +23,6 @@ export class ProductCardComponent implements OnInit {
   ngOnChanges(): void {
     this.checkIfInFavoriteList();
   }
-
   // work only in favorite page
   removeFromFavorite() {
     if (this.ProductsInFavoriteList) {
@@ -34,7 +33,6 @@ export class ProductCardComponent implements OnInit {
     }
     this.ReqRemoveFromFavorite();
   }
-
   // work only in shop page
   checkIfInFavoriteList() {
     if (this.idsInFavoriteList) {
@@ -80,6 +78,18 @@ export class ProductCardComponent implements OnInit {
       })
       .subscribe((_) => {
         this.isInFavorite = true;
+      });
+  }
+
+  ReqAddToCart() {
+    this.http
+      .post<any>('https://eshop-iti.herokuapp.com/api/v1/cart', {
+        product: this.currentProduct._id,
+        quantity: 1,
+      })
+      .subscribe((response) => {
+        console.log('add to current successfully');
+        console.log(response);
       });
   }
 }

@@ -1,8 +1,6 @@
 @import "../../css/variable";     
 @import "../../css/mixins";
-/*---------------------
-  Shop
------------------------*/
+
 .product__details__pic {
     text-align: center;
     background: #f3f2ee;
@@ -269,6 +267,10 @@
           }
         }
       }
+    }
+    a{
+      color: white;
+      cursor: pointer;
     }
   }
   

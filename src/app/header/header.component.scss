@@ -208,11 +208,17 @@
       position: relative;
 
       span {
-          color: #0d0d0d;
+          color: #fff;
           font-size: 11px;
           position: absolute;
-          left: 5px;
-          top: 8px;
+          left: 12px;
+          top: -15px;
+          background-color: #e63334;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          line-height: 22px;
+          text-align: center;
       }
 
       &:last-child {
