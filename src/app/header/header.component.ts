@@ -64,9 +64,9 @@ export class HeaderComponent implements OnInit {
     this.http
       .get<any[]>(`https://eshop-iti.herokuapp.com/api/v1/users/get/me`)
       .subscribe((response:any) => {
-        console.log(response);
+        // console.log(response);
         this.userData = response
-        console.log(this.userData.name)
+        // console.log(this.userData.name)
       });
   }
 
