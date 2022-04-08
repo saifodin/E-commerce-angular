@@ -38,9 +38,25 @@ export class ShopDeatilsComponent implements OnInit {
         `https://eshop-iti.herokuapp.com/api/v1/products/${productId}`
       )
       .subscribe((productDetails) => {
-        console.log('productDetails');
-        console.log(productDetails);
         this.currentProduct = productDetails;
+      });
+  }
+
+  addToCart() {
+    let myColor: string =
+      document.querySelector('input[type=radio][name=color]:checked')?.id || '';
+    let mySize: string =
+      document.querySelector('input[type=radio][name=size]:checked')?.id || '';
+    this.http
+      .post<any>('https://eshop-iti.herokuapp.com/api/v1/cart', {
+        product: this.currentProduct._id,
+        quantity: this.quantity,
+        color: myColor,
+        size: mySize,
+      })
+      .subscribe((response) => {
+        console.log('add to current successfully');
+        console.log(response);
       });
   }
 }

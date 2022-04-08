@@ -51,8 +51,13 @@
     font-weight: 700;
   }
 }
+.favoriteListContainer{
+  transition: all .2s ease-in-out;
+}
+
 .favoriteList{
-  margin-top: 40px
+  margin-top: 40px;
+  transition: all .2s ease-in-out;
 }
 
 

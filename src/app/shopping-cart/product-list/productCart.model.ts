@@ -5,6 +5,8 @@ export class ProductCart {
     public title: string,
     public price: number,
     public quantity: number,
+    public size: string,
+    public color: string,
     public totalPrice: number = price * quantity
   ) {}
 }

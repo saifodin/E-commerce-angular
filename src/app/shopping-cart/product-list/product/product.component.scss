@@ -27,6 +27,13 @@ td {
       h5 {
         color: #0d0d0d;
         font-weight: 700;
+        // margin-right: 50px;
+        span{
+          color: darkgrey;
+          &:first-of-type{
+            margin-left: 20px;
+          }
+        }
       }
     }
   }
