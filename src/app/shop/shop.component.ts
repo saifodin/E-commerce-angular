@@ -13,7 +13,7 @@ export class ShopComponent implements OnInit {
   allLoadedProducts: ProductDB[] = [];
   loadedProducts: ProductDB[] = [];
   category: string;
-  userInfo = JSON.parse(localStorage.getItem('userInfo') || '');
+  // userInfo = JSON.parse(localStorage.getItem('userInfo') || '');
   idsInFavoriteList: string[];
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}

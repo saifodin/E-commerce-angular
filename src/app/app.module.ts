@@ -34,6 +34,13 @@ import { LogoutComponent } from './logout/logout.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { TokenInterceptor } from './TokenInterceptor';
 import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
+import { AdminComponent } from './admin/admin.component';
+import { ProductAdminComponent } from './admin/product-admin/product-admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { EditDialogComponent } from './admin/product-admin/edit-dialog/edit-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -66,12 +73,18 @@ import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
     LogoutComponent,
     FavoriteListComponent,
     CheckoutComponent,
+    AdminComponent,
+    ProductAdminComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [
     {

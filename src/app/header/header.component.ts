@@ -13,10 +13,11 @@ export class HeaderComponent implements OnInit {
     totalPrice: 0.0,
   };
 
-  userData : any;
+  isAdmin: boolean = false;
+
+  userData: any;
 
   constructor(private _AuthService: AuthService, private http: HttpClient) {
-   
     _AuthService.currentUser.subscribe(() => {
       if (_AuthService.currentUser.getValue() != null) {
         this.isLogin = true;
@@ -28,7 +29,6 @@ export class HeaderComponent implements OnInit {
 
   isLogin: boolean = false;
 
-
   isLogOut() {
     this._AuthService.logout();
   }
@@ -36,7 +36,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getCartTotal();
     this.getUserInfo();
-
+    if (localStorage.getItem('isAdmin') === 'true') {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
   }
 
   ngDoCheck() {
@@ -60,14 +64,13 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  private getUserInfo(){
+  private getUserInfo() {
     this.http
       .get<any[]>(`https://eshop-iti.herokuapp.com/api/v1/users/get/me`)
-      .subscribe((response:any) => {
-        // console.log(response);
-        this.userData = response
+      .subscribe((response: any) => {
+        console.log(response);
+        this.userData = response;
         // console.log(this.userData.name)
       });
   }
-
 }
