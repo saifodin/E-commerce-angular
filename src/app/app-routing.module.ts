@@ -10,6 +10,7 @@ import { ShopDeatilsComponent } from './shop-deatils/shop-deatils.component';
 import { ShopComponent } from './shop/shop.component';
 import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { UserdeatilsComponent } from './userdeatils/userdeatils.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }, //
   // { path: '**', pathMatch: 'full', component: HomeComponent },
+  { path: 'userdeatils', component: UserdeatilsComponent },
 ];
 
 @NgModule({

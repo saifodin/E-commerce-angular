@@ -39,8 +39,8 @@ import { ProductAdminComponent } from './admin/product-admin/product-admin.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { EditDialogComponent } from './admin/product-admin/edit-dialog/edit-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserdeatilsComponent } from './userdeatils/userdeatils.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +76,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AdminComponent,
     ProductAdminComponent,
     EditDialogComponent,
+    UserdeatilsComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +85,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [
     {

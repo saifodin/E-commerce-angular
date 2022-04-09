@@ -40,7 +40,11 @@ export class AuthService {
   {
     this.currentUser.next(null);
     localStorage.clear()
-    this._Router.navigate(['/login']);
+    this._Router.navigate(['']);
 
+  }
+  userDeatils()
+  {
+    this._Router.navigate(['/userdeatils']);
   }
 }
